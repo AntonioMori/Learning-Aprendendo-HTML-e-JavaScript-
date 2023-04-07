@@ -56,18 +56,18 @@
 	}
 
 	function imc(peso,altura) {
-		if (altura == null) {
-			alert("Erro no calculo do IMC, preencha corretamente!"); 
-			} 
-	
+		if (altura == null || peso == null){
+			alert("Erro no calculo do IMC, preencha corretamente!");}
+			 
 		else {
 			imc = peso / (altura*altura);
-			titulo("O seu IMC é: " + arredonda(imc));
-			pulaLinha(0,1);
+			return imc
+			
 		}}
 
 
 
-imc(73,1.71);
+titulo("O seu IMC é: " + arredonda(imc(73,1.71)));
+pulaLinha(0,1);
 
 </script>
