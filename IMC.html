@@ -60,14 +60,33 @@
 			alert("Erro no calculo do IMC, preencha corretamente!");}
 			 
 		else {
-			imc = peso / (altura*altura);
-			return imc
+			return peso / (altura*altura);
+			
 			
 		}}
 
+	function coletaDadosImc(numeroDePessoas){
+
+	
+		var listaDeImcs = [];
+		var listaDeNomes = [];
+		var listaValoresENomes = [];
+
+		for (var i = numeroDePessoas - 1; i >= 0; i--) {
+			var nomeAtual = prompt("Informe o seu nome: ");
+			var pesoAtual = prompt(nomeAtual + ", digite o seu peso: ");
+			var alturaAtual = prompt(nomeAtual + ", agora digite a sua altura: ");
+			var imcAtual = imc(pesoAtual,alturaAtual);
+
+			listaDeImcs.push(arredonda(imcAtual));
+			listaDeNomes.push(nomeAtual);}
+		
+		for (var i = listaDeNomes.length - 1; i >= 0; i--) {
+			listaValoresENomes.unshift("O "+listaDeNomes[i] +" tem imc de: "+listaDeImcs[i]+"<br>");	}
+		
+		return 	listaValoresENomes}
+	
 
 
-titulo("O seu IMC é: " + arredonda(imc(73,1.71)));
-pulaLinha(0,1);
 
 </script>
